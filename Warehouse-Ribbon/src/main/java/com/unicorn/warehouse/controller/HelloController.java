@@ -1,7 +1,8 @@
 package com.unicorn.warehouse.controller;
 
 
-import com.unicorn.warehouse.service.HelloService;
+import com.unicorn.warehouse.model.Product;
+import com.unicorn.warehouse.service.WarehouseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -16,10 +17,20 @@ import org.springframework.web.bind.annotation.RestController;
 public class HelloController {
 
     @Autowired
-    HelloService helloService;
+    WarehouseService warehouseService;
 
-    @RequestMapping(value = "/hello", method = RequestMethod.GET)
-    public String hello(@RequestParam String name) {
-        return helloService.helloService(name);
+    @RequestMapping(value = "/warehouse/put", method = RequestMethod.POST)
+    public String add(@RequestParam int id, @RequestParam int num) {
+        return warehouseService.put(id, num);
+    }
+
+    @RequestMapping("/warehouse/view")
+    public Product view(@RequestParam int id) {
+        return warehouseService.view(id);
+    }
+
+    @RequestMapping(value = "/warehouse/fetch", method = RequestMethod.POST)
+    public String fetch(@RequestParam int id, @RequestParam int num) {
+        return warehouseService.fetch(id,num);
     }
 }
