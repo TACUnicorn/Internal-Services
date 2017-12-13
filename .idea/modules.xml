@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" filepath="$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" filepath="$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-Second/warehouse.iml" filepath="$PROJECT_DIR$/Warehouse-Client-Second/warehouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" filepath="$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" />
+    </modules>
+  </component>
+</project>
