@@ -8,14 +8,14 @@ public class Product {
     private int id;
     private String name;
     private String description;
-    private int count;
+    private int num;
 
-    public int getCount() {
-        return count;
+    public int getNum() {
+        return num;
     }
 
-    public void setCount(int count) {
-        this.count = count;
+    public void setNum(int num) {
+        this.num = num;
     }
 
     public int getId() {

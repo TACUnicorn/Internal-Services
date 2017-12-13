@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date on 12/13/17
  */
 @RestController
-public class HelloController {
+public class WarehouseController {
 
     @Autowired
     WarehouseService warehouseService;
@@ -31,6 +31,6 @@ public class HelloController {
 
     @RequestMapping(value = "/warehouse/fetch", method = RequestMethod.POST)
     public String fetch(@RequestParam int id, @RequestParam int num) {
-        return warehouseService.fetch(id,num);
+        return warehouseService.fetch(id, num);
     }
 }

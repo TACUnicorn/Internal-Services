@@ -26,13 +26,14 @@ public class WarehouseController {
     ProductMapper productMapper;
 
     @RequestMapping(value = "/warehouse/put", method = RequestMethod.POST)
-    public String add(@RequestParam int id, @RequestParam int num) {
+    public String put(@RequestParam int id, @RequestParam int num) {
         if (num < 0) {
             return "500";
         }
         try {
             // get count from database
             int count = warehouseMapper.getProductCountFromWarehouse(id);
+            System.out.println(count);
             if ( count > 0) {
                 warehouseMapper.updateWarehouse(id, num + count);
             } else {
@@ -45,8 +46,8 @@ public class WarehouseController {
         return "200";
     }
 
-    @RequestMapping("/warehouse/view")
-    public Product add(@RequestParam int id) {
+    @RequestMapping(value = "/warehouse/view", method = RequestMethod.GET)
+    public Product view(@RequestParam int id) {
         try {
             // get product from database
             Product product = productMapper.getProductFromWarehouseByID(id);
@@ -69,7 +70,7 @@ public class WarehouseController {
             // get count from database
             int count = warehouseMapper.getProductCountFromWarehouse(id);
             if ( count > num) {
-                warehouseMapper.updateWarehouse(id, num - count);
+                warehouseMapper.updateWarehouse(id, count - num);
             }
             return "success";
         } catch (Exception e) {

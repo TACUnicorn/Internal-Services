@@ -3,10 +3,8 @@ package com.unicorn.warehouse.controller;
 import com.unicorn.warehouse.mapper.ProductMapper;
 import com.unicorn.warehouse.mapper.WarehouseMapper;
 import com.unicorn.warehouse.model.Product;
-import com.unicorn.warehouse.model.Warehouse;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -47,7 +45,7 @@ public class WarehouseController {
         return "200";
     }
 
-    @RequestMapping("/warehouse/view", method = RequestMethod.GET)
+    @RequestMapping(value = "/warehouse/view", method = RequestMethod.GET)
     public Product view(@RequestParam int id) {
         try {
             // get product from database
@@ -71,7 +69,7 @@ public class WarehouseController {
             // get count from database
             int count = warehouseMapper.getProductCountFromWarehouse(id);
             if ( count > num) {
-                warehouseMapper.updateWarehouse(id, num - count);
+                warehouseMapper.updateWarehouse(id, count - num);
             }
             return "success";
         } catch (Exception e) {

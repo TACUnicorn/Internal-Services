@@ -1,9 +1,6 @@
 package com.unicorn.warehouse.mapper;
 
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,10 +12,10 @@ import org.springframework.stereotype.Service;
 public interface WarehouseMapper {
 
     @Insert("INSERT INTO warehouse(p_id, num) VALUES (#{p_id}, #{num})")
-    void addWarehouse(int p_id, int num);
+    void addWarehouse(@Param("p_id") int p_id, @Param("num")int num);
 
     @Update("UPDATE warehouse SET num = #{num} WHERE p_id = #{p_id}")
-    void updateWarehouse(int p_id, int num);
+    void updateWarehouse(@Param("p_id") int p_id, @Param("num")int num);
 
     @Select("SELECT num FROM warehouse WHERE p_id = #{p_id}")
     int getProductCountFromWarehouse(int p_id);
