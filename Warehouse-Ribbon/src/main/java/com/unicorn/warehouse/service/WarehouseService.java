@@ -34,7 +34,7 @@ public class WarehouseService {
         headers.add("Accept", MediaType.APPLICATION_JSON.toString());
 
         JSONObject jsonParams = JSON.parseObject("{\"id\":" + id + ", \"num\":" + num + "}");
-        HttpEntity<JSONObject> requestEntity = new HttpEntity<>(jsonParams, headers);
+        HttpEntity<String> requestEntity = new HttpEntity<>(jsonParams.toJSONString(), headers);
         System.out.println(requestEntity.getBody().toString());
         String s = null;
         try {

@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/Factory-Client-First/Factory-Client-First.iml" filepath="$PROJECT_DIR$/Factory-Client-First/Factory-Client-First.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Factory-Client-Second/Factory-Client-Second.iml" filepath="$PROJECT_DIR$/Factory-Client-Second/Factory-Client-Second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Factory-Ribbon/Factory-Ribbon.iml" filepath="$PROJECT_DIR$/Factory-Ribbon/Factory-Ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Finance-Client-First/Finance-Client-First.iml" filepath="$PROJECT_DIR$/Finance-Client-First/Finance-Client-First.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Finance-Client-Second/Finance-Client-Second.iml" filepath="$PROJECT_DIR$/Finance-Client-Second/Finance-Client-Second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Finance-Ribbon/Finance-Ribbon.iml" filepath="$PROJECT_DIR$/Finance-Ribbon/Finance-Ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Management-Client-First/Management-Client-First.iml" filepath="$PROJECT_DIR$/Management-Client-First/Management-Client-First.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Management-Client-Second/Management-Client-Second.iml" filepath="$PROJECT_DIR$/Management-Client-Second/Management-Client-Second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Management-Ribbon/Management-Ribbon.iml" filepath="$PROJECT_DIR$/Management-Ribbon/Management-Ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicorn-Config-Server/Unicorn-Config-Server.iml" filepath="$PROJECT_DIR$/Unicorn-Config-Server/Unicorn-Config-Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" filepath="$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicorn-Zuul/Unicorn-Zuul.iml" filepath="$PROJECT_DIR$/Unicorn-Zuul/Unicorn-Zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" filepath="$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-Second/warehouse.iml" filepath="$PROJECT_DIR$/Warehouse-Client-Second/warehouse.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" filepath="$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-Second/Warehouse-Client-Second.iml" filepath="$PROJECT_DIR$/Warehouse-Client-Second/Warehouse-Client-Second.iml" />
     </modules>
   </component>
 </project>

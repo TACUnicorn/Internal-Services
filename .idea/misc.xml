@@ -4,9 +4,10 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Warehouse-server/pom.xml" />
-        <option value="$PROJECT_DIR$/Warehouse-Ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/Warehouse-Client/pom.xml" />
+        <option value="$PROJECT_DIR$/Unicorn-Server/pom.xml" />
         <option value="$PROJECT_DIR$/Warehouse-Client-Second/pom.xml" />
+        <option value="$PROJECT_DIR$/Unicorn-Config-Server/pom.xml" />
       </list>
     </option>
   </component>
