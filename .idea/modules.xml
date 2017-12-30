@@ -11,11 +11,13 @@
       <module fileurl="file://$PROJECT_DIR$/Management-Client-First/Management-Client-First.iml" filepath="$PROJECT_DIR$/Management-Client-First/Management-Client-First.iml" />
       <module fileurl="file://$PROJECT_DIR$/Management-Client-Second/Management-Client-Second.iml" filepath="$PROJECT_DIR$/Management-Client-Second/Management-Client-Second.iml" />
       <module fileurl="file://$PROJECT_DIR$/Management-Ribbon/Management-Ribbon.iml" filepath="$PROJECT_DIR$/Management-Ribbon/Management-Ribbon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Unicorn-Config-Client/Unicorn-Config-Client.iml" filepath="$PROJECT_DIR$/Unicorn-Config-Client/Unicorn-Config-Client.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unicorn-Config-Server/Unicorn-Config-Server.iml" filepath="$PROJECT_DIR$/Unicorn-Config-Server/Unicorn-Config-Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" filepath="$PROJECT_DIR$/Unicorn-Server/Unicorn-Server.iml" />
       <module fileurl="file://$PROJECT_DIR$/Unicorn-Zuul/Unicorn-Zuul.iml" filepath="$PROJECT_DIR$/Unicorn-Zuul/Unicorn-Zuul.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" filepath="$PROJECT_DIR$/Warehouse-Client-First/Warehouse-Client-First.iml" />
       <module fileurl="file://$PROJECT_DIR$/Warehouse-Client-Second/Warehouse-Client-Second.iml" filepath="$PROJECT_DIR$/Warehouse-Client-Second/Warehouse-Client-Second.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" filepath="$PROJECT_DIR$/Warehouse-Ribbon/Warehouse-Ribbon.iml" />
     </modules>
   </component>
 </project>

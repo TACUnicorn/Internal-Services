@@ -8,6 +8,13 @@
         <option value="$PROJECT_DIR$/Unicorn-Server/pom.xml" />
         <option value="$PROJECT_DIR$/Warehouse-Client-Second/pom.xml" />
         <option value="$PROJECT_DIR$/Unicorn-Config-Server/pom.xml" />
+        <option value="$PROJECT_DIR$/Unicorn-Config-Client/pom.xml" />
+        <option value="$PROJECT_DIR$/Unicorn-Zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/Warehouse-Ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/Finance-Client-Second/pom.xml" />
+        <option value="$PROJECT_DIR$/Finance-Ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/Factory-Client-First/pom.xml" />
+        <option value="$PROJECT_DIR$/Factory-Ribbon/pom.xml" />
       </list>
     </option>
   </component>

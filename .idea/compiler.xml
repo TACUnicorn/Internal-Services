@@ -6,18 +6,31 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Factory-Client-First" />
+        <module name="Factory-Ribbon" />
+        <module name="Finance-Client-Second" />
+        <module name="Finance-Ribbon" />
+        <module name="Unicorn-Config-Client" />
         <module name="Unicorn-Config-Server" />
         <module name="Unicorn-Server" />
+        <module name="Unicorn-Zuul" />
         <module name="warehouse" />
         <module name="Warehouse-Client" />
         <module name="Warehouse-Client-First" />
         <module name="Warehouse-Client-Second" />
+        <module name="Warehouse-Ribbon" />
         <module name="Warehouse-server" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="Factory-Client-First" target="1.8" />
+      <module name="Factory-Ribbon" target="1.8" />
+      <module name="Finance-Client-Second" target="1.8" />
+      <module name="Finance-Ribbon" target="1.8" />
+      <module name="Unicorn-Config-Client" target="1.8" />
       <module name="Unicorn-Config-Server" target="1.8" />
       <module name="Unicorn-Server" target="1.8" />
+      <module name="Unicorn-Zuul" target="1.8" />
       <module name="warehouse" target="1.8" />
       <module name="Warehouse-Client" target="1.8" />
       <module name="Warehouse-Client-First" target="1.8" />
