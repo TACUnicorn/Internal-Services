@@ -7,9 +7,14 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Factory-Client-First" />
+        <module name="Factory-Client-Second" />
         <module name="Factory-Ribbon" />
+        <module name="Finance-Client-First" />
         <module name="Finance-Client-Second" />
         <module name="Finance-Ribbon" />
+        <module name="Management-Client-First" />
+        <module name="Management-Client-Second" />
+        <module name="Management-Ribbon" />
         <module name="Unicorn-Config-Client" />
         <module name="Unicorn-Config-Server" />
         <module name="Unicorn-Server" />
@@ -24,9 +29,14 @@
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="Factory-Client-First" target="1.8" />
+      <module name="Factory-Client-Second" target="1.8" />
       <module name="Factory-Ribbon" target="1.8" />
+      <module name="Finance-Client-First" target="1.8" />
       <module name="Finance-Client-Second" target="1.8" />
       <module name="Finance-Ribbon" target="1.8" />
+      <module name="Management-Client-First" target="1.8" />
+      <module name="Management-Client-Second" target="1.8" />
+      <module name="Management-Ribbon" target="1.8" />
       <module name="Unicorn-Config-Client" target="1.8" />
       <module name="Unicorn-Config-Server" target="1.8" />
       <module name="Unicorn-Server" target="1.8" />

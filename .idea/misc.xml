@@ -15,6 +15,12 @@
         <option value="$PROJECT_DIR$/Finance-Ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/Factory-Client-First/pom.xml" />
         <option value="$PROJECT_DIR$/Factory-Ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/Management-Client-First/pom.xml" />
+        <option value="$PROJECT_DIR$/Management-Client-Second/pom.xml" />
+        <option value="$PROJECT_DIR$/Management-Ribbon/pom.xml" />
+        <option value="$PROJECT_DIR$/Factory-Client-Second/pom.xml" />
+        <option value="$PROJECT_DIR$/Warehouse-Client-First/pom.xml" />
+        <option value="$PROJECT_DIR$/Finance-Client-First/pom.xml" />
       </list>
     </option>
   </component>
