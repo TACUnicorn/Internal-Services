@@ -6,7 +6,7 @@
 - Factory
 >4222-4
 - Management
->522-4
+>5222-4
 - Config-server
 >8888
 - Zuul
