@@ -129,7 +129,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PutMapping(value = "/{product_id}")
+    @PutMapping(value = "/product/{product_id}")
     public BasicResponse<String> updateProduct(@PathVariable("product_id") int productId,
                                                @RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -176,7 +176,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PostMapping(value = "/")
+    @PostMapping(value = "/product")
     public BasicResponse<String> addProduct(@RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         try {

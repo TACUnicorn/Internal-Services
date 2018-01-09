@@ -9,6 +9,7 @@ public class Order {
     private int progress;
     private int p_id;
     private int num;
+    
 
     public int getId() {
         return id;
