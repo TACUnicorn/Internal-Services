@@ -15,7 +15,7 @@ import java.util.List;
 @Service
 public interface ProductTransferMapper {
 
-    @Select("SELECT product_transfer.id, product.id AS p_id, num, name, time FROM product_transfer, product" +
+    @Select("SELECT product_transfer.id, product.id AS p_id, num, name, time, type, state FROM product_transfer, product" +
             " WHERE p_id = product.id && time > #{start} && time < #{end} && state = #{state}")
     List<ProductTransfer> getProductTransfers(@Param("start") Timestamp start,
                                               @Param("end") Timestamp end,
@@ -25,7 +25,7 @@ public interface ProductTransferMapper {
             "VALUES(#{p_id}, #{num}, #{time}, #{type}, #{state})")
     int addProductTransfers(ProductTransfer productTransfer);
 
-    @Update("UPDTAE product_transfer SET state = #{state} WHERE id = #{id}")
+    @Update("UPDATE product_transfer SET state = #{state} WHERE id = #{id}")
     void updateProductTransfer(@Param("id") int id,
                                @Param("state") int state);
 }

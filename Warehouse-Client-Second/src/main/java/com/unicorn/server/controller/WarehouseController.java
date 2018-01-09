@@ -1,5 +1,6 @@
 package com.unicorn.server.controller;
 
+import com.sun.scenario.effect.impl.sw.sse.SSEBlend_SRC_OUTPeer;
 import com.unicorn.server.mapper.ProductMapper;
 import com.unicorn.server.mapper.ProductTransferMapper;
 import com.unicorn.server.mapper.WarehouseMapper;
@@ -154,6 +155,7 @@ public class WarehouseController {
             response.setCode(200);
             response.setMessage("success");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             response.setCode(400);
             response.setMessage("fail");
         }

@@ -57,7 +57,7 @@ public class WarehouseService {
 
     @HystrixCommand(fallbackMethod = "updateProductTransferError")
     public void updateProductTransfer(int id, int state) {
-        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/product/transfer/" + id, state);
+        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/product/transfer/" + id + "?state=" + state, null);
     }
 
     @HystrixCommand(fallbackMethod = "postError")
