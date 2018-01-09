@@ -14,7 +14,7 @@ import java.util.List;
 @Service
 public interface OrderMapper {
 
-    @Insert("INSERT INTO orders(p_id, num) VALUES (#{id}, #{num})")
+    @Insert("INSERT INTO orders(p_id, num, state, time) VALUES (#{id}, #{num}, 0, now())")
     int addOrder(@Param("id") int id, @Param("num") int num);
 
     @Update("UPDATE orders SET p_id = #{p_id}, num = #{num}, state = #{state}," +
