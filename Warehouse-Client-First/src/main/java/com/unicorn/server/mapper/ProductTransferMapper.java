@@ -15,8 +15,8 @@ import java.util.List;
 @Service
 public interface ProductTransferMapper {
 
-    @Select("SELECT id, num, name, time FROM product_transfer, product" +
-            "WHERE p_id = product.id && date > #{start} && date < #{end} && state = #{state}")
+    @Select("SELECT product_transfer.id, product.id AS p_id, num, name, time FROM product_transfer, product" +
+            " WHERE p_id = product.id && time > #{start} && time < #{end} && state = #{state}")
     List<ProductTransfer> getProductTransfers(@Param("start") Timestamp start,
                                               @Param("end") Timestamp end,
                                               @Param("state") int state);

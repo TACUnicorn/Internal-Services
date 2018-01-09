@@ -21,7 +21,9 @@ public interface ProductMapper {
     int addProduct(ProductInfoTmp productInfoTmp);
 
     @Update("UPDATE product SET name = #{name}, price = #{price}, " +
-            "description = #{description} WHERE id = #{id}")
-    void updateProduct(ProductInfoTmp productInfoTmp,
+            "description = #{description} WHERE id = #{product_id}")
+    void updateProduct(@Param("name") String name,
+                       @Param("price") int price,
+                       @Param("description") String description,
                        @Param("product_id") int product_id);
 }

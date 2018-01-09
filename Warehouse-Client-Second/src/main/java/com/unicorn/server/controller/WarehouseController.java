@@ -29,7 +29,7 @@ public class WarehouseController {
     @Autowired
     ProductMapper productMapper;
 
-    @RequestMapping(value = "/put", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/put", method = RequestMethod.POST)
     public BasicResponse<String> put(@RequestBody ProductTmp productTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         if (productTmp.getNum() < 0) {
@@ -93,7 +93,7 @@ public class WarehouseController {
         }
     }
 
-    @RequestMapping(value = "/fetch", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/fetch", method = RequestMethod.POST)
     public BasicResponse<String> fetch(@RequestBody ProductTmp productTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         if (productTmp.getNum() < 0) {
@@ -133,17 +133,19 @@ public class WarehouseController {
                                                @RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         try {
-            productMapper.updateProduct(productInfoTmp, productId);
+            productMapper.updateProduct(productInfoTmp.getName(), productInfoTmp.getPrice(),
+                    productInfoTmp.getDescription(), productId);
             response.setCode(200);
             response.setMessage("success");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             response.setCode(400);
             response.setMessage("fail");
         }
         return response;
     }
 
-    @PutMapping(value = "/transfer/{transfer_id}")
+    @PutMapping(value = "/product/transfer/{transfer_id}")
     public BasicResponse<String> addProduct(@PathVariable("transfer_id") int id,
                                             @RequestParam("state") int state) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -158,7 +160,7 @@ public class WarehouseController {
         return response;
     }
 
-    @GetMapping(value = "/transfers")
+    @GetMapping(value = "/product/transfers")
     public BasicResponse<List<ProductTransfer>> getProductTransfers(@RequestParam("start") Timestamp start,
                                                                     @RequestParam("end") Timestamp end,
                                                                     @RequestParam(value = "state") int state) {

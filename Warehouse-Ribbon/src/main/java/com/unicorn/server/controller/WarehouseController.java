@@ -18,7 +18,7 @@ public class WarehouseController {
     @Autowired
     WarehouseService warehouseService;
 
-    @RequestMapping(value = "/put", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/put", method = RequestMethod.POST)
     public BasicResponse add(@RequestBody ProductTmp productTmp) {
         return warehouseService.put(productTmp);
     }
@@ -28,7 +28,7 @@ public class WarehouseController {
         return warehouseService.view(id);
     }
 
-    @RequestMapping(value = "/fetch", method = RequestMethod.POST)
+    @RequestMapping(value = "/product/fetch", method = RequestMethod.POST)
     public BasicResponse fetch(@RequestBody ProductTmp productTmp) {
         return warehouseService.fetch(productTmp);
     }
@@ -48,7 +48,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PutMapping(value = "/transfer/{transfer_id}")
+    @PutMapping(value = "/product/transfer/{transfer_id}")
     public BasicResponse updateProduct(@PathVariable("transfer_id") int id,
                                        @RequestParam("state") int state) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -63,7 +63,7 @@ public class WarehouseController {
         return response;
     }
 
-    @GetMapping(value = "/transfers")
+    @GetMapping(value = "/product/transfers")
     public BasicResponse getProductTransfers(@RequestParam("start") Timestamp start,
                                              @RequestParam("end") Timestamp end,
                                              @RequestParam(value = "state") int state) {

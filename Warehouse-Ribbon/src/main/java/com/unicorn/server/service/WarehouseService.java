@@ -23,7 +23,7 @@ public class WarehouseService {
 
     @HystrixCommand(fallbackMethod = "postError")
     public BasicResponse put(@RequestBody ProductTmp productTmp) {
-        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/put",
+        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/product/put",
                 productTmp, BasicResponse.class);
     }
 
@@ -35,17 +35,17 @@ public class WarehouseService {
     @HystrixCommand(fallbackMethod = "putError")
     public void updateProduct(@RequestBody ProductInfoTmp productInfoTmp,
                                                int product_id) {
-        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/" + product_id, productInfoTmp);
+        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/product/" + product_id, productInfoTmp);
     }
 
     @HystrixCommand(fallbackMethod = "Error")
     public BasicResponse addProduct(@RequestBody ProductInfoTmp productInfoTmp) {
-        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/", productInfoTmp, BasicResponse.class);
+        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/product", productInfoTmp, BasicResponse.class);
     }
 
     @HystrixCommand(fallbackMethod = "getProductTransferError")
     public BasicResponse getProductTransfers(Timestamp start, Timestamp end, int state) {
-        return restTemplate.getForObject("http://WAREHOUSE-SERVICE-CLIENT/transfer?start=" + start + "&end=" + end
+        return restTemplate.getForObject("http://WAREHOUSE-SERVICE-CLIENT/product/transfers?start=" + start + "&end=" + end
                 + "&state=" + state, BasicResponse.class);
     }
 
@@ -57,16 +57,23 @@ public class WarehouseService {
 
     @HystrixCommand(fallbackMethod = "updateProductTransferError")
     public void updateProductTransfer(int id, int state) {
-        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/transfer/" + id, state);
+        restTemplate.put("http://WAREHOUSE-SERVICE-CLIENT/product/transfer/" + id, state);
     }
 
     @HystrixCommand(fallbackMethod = "postError")
     public BasicResponse fetch(@RequestBody ProductTmp productTmp) {
-        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/fetch",
+        return restTemplate.postForObject("http://WAREHOUSE-SERVICE-CLIENT/product/fetch",
                 productTmp, BasicResponse.class);
     }
 
     public BasicResponse viewError(int id) {
+        BasicResponse<Product> response = new BasicResponse<>();
+        response.setCode(400);
+        response.setMessage("error");
+        return response;
+    }
+
+    public BasicResponse Error(@RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<Product> response = new BasicResponse<>();
         response.setCode(400);
         response.setMessage("error");
@@ -80,7 +87,7 @@ public class WarehouseService {
         return response;
     }
 
-    public BasicResponse getProductTransferError() {
+    public BasicResponse getProductTransferError(Timestamp start, Timestamp end, int state) {
         BasicResponse<List<ProductTransfer>> response = new BasicResponse<>();
         response.setCode(400);
         response.setMessage("error");
