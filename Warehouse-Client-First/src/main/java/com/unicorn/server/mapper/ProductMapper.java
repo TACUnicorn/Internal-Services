@@ -1,8 +1,8 @@
 package com.unicorn.server.mapper;
 
 import com.unicorn.server.model.Product;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import com.unicorn.server.model.ProductInfoTmp;
+import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
 
 /**
@@ -13,7 +13,15 @@ import org.springframework.stereotype.Service;
 @Service
 public interface ProductMapper {
 
-    @Select("SELECT product.id, name, description, num FROM product, warehouse " +
+    @Select("SELECT product.id, name, description, price, num FROM product, warehouse " +
             "WHERE product.id = warehouse.p_id AND id = #{id}")
     Product getProductFromWarehouseByID(int id);
+
+    @Insert("INSERT INTO product(name, price, description) VALUES (#{name}, #{price}, #{description})")
+    int addProduct(ProductInfoTmp productInfoTmp);
+
+    @Update("UPDATE product SET name = #{name}, price = #{price}, " +
+            "description = #{description} WHERE id = #{id}")
+    void updateProduct(ProductInfoTmp productInfoTmp,
+                       @Param("product_id") int product_id);
 }

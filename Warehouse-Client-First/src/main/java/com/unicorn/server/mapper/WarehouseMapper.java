@@ -1,7 +1,10 @@
 package com.unicorn.server.mapper;
 
+import com.unicorn.server.model.Product;
 import org.apache.ibatis.annotations.*;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * @author Create by xuantang
@@ -23,5 +26,7 @@ public interface WarehouseMapper {
     @Select("select count(*) from warehouse where p_id = #{p_id}")
     int checkProduct(int p_id);
 
-
+    @Select("SELECT product.id, name, description, price, num FROM product, warehouse " +
+            "WHERE product.id = warehouse.p_id")
+    List<Product> getProductsFromWarehouse();
 }
