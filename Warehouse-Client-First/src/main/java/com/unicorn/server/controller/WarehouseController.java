@@ -129,7 +129,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PutMapping(value = "/product/{product_id}")
+    @PutMapping(value = "/{product_id}")
     public BasicResponse<String> updateProduct(@PathVariable("product_id") int productId,
                                                @RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -144,7 +144,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PutMapping(value = "/product/transfer/{transfer_id}")
+    @PutMapping(value = "/transfer/{transfer_id}")
     public BasicResponse<String> addProduct(@PathVariable("transfer_id") int id,
                                             @RequestParam("state") int state) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -159,7 +159,7 @@ public class WarehouseController {
         return response;
     }
 
-    @GetMapping(value = "/product/transfers")
+    @GetMapping(value = "/transfers")
     public BasicResponse<List<ProductTransfer>> getProductTransfers(@RequestParam("start") Timestamp start,
                                                                     @RequestParam("end") Timestamp end,
                                                                     @RequestParam(value = "state") int state) {
@@ -176,7 +176,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PostMapping(value = "/product")
+    @PostMapping(value = "/")
     public BasicResponse<String> addProduct(@RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         try {

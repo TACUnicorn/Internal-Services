@@ -33,7 +33,7 @@ public class WarehouseController {
         return warehouseService.fetch(productTmp);
     }
 
-    @PutMapping(value = "/product/{product_id}")
+    @PutMapping(value = "/{product_id}")
     public BasicResponse<String> updateProduct(@PathVariable("product_id") int productId,
                                                @RequestBody ProductInfoTmp productInfoTmp) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -48,7 +48,7 @@ public class WarehouseController {
         return response;
     }
 
-    @PutMapping(value = "/product/transfer/{transfer_id}")
+    @PutMapping(value = "/transfer/{transfer_id}")
     public BasicResponse updateProduct(@PathVariable("transfer_id") int id,
                                        @RequestParam("state") int state) {
         BasicResponse<String> response = new BasicResponse<>();
@@ -63,14 +63,14 @@ public class WarehouseController {
         return response;
     }
 
-    @GetMapping(value = "/product/transfers")
+    @GetMapping(value = "/transfers")
     public BasicResponse getProductTransfers(@RequestParam("start") Timestamp start,
                                              @RequestParam("end") Timestamp end,
                                              @RequestParam(value = "state") int state) {
         return warehouseService.getProductTransfers(start, end, state);
     }
 
-    @PostMapping(value = "/product")
+    @PostMapping(value = "/")
     public BasicResponse addProduct(@RequestBody ProductInfoTmp productInfoTmp) {
         return warehouseService.addProduct(productInfoTmp);
     }
