@@ -20,23 +20,43 @@ public class FactoryService {
     RestTemplate restTemplate;
 
     @HystrixCommand(fallbackMethod = "Error")
-    public BasicResponse<String> place(@RequestBody OrderTmp orderTmp) {
-        return restTemplate.postForObject("http://FACTORY-SERVICE-CLIENT/place",
+    public BasicResponse place(@RequestBody OrderTmp orderTmp) {
+        return restTemplate.postForObject("http://FACTORY-SERVICE-CLIENT/order",
                 orderTmp, BasicResponse.class);
     }
 
+    @HystrixCommand(fallbackMethod = "updateError")
+    public void updateOrder(@RequestBody Order order) {
+        restTemplate.put("http://FACTORY-SERVICE-CLIENT/order", order);
+    }
+
+    @HystrixCommand(fallbackMethod = "getOrdersError")
+    public BasicResponse getOrders() {
+        return restTemplate.getForObject("http://FACTORY-SERVICE-CLIENT/orders",
+                BasicResponse.class);
+    }
+
     @HystrixCommand(fallbackMethod = "viewError")
-    public BasicResponse<Order> check(int id) {
+    public BasicResponse check(int id) {
         return restTemplate.getForObject("http://FACTORY-SERVICE-CLIENT/check?id=" +
                 id, BasicResponse.class);
     }
 
+    public BasicResponse getOrdersError() {
+        BasicResponse response = new BasicResponse<>();
+        response.setCode(400);
+        response.setMessage("error");
+        return response;
+    }
 
     public BasicResponse<Order> viewError(int id) {
         BasicResponse<Order> response = new BasicResponse<>();
         response.setCode(400);
         response.setMessage("error");
         return response;
+    }
+
+    public void updateError(@RequestBody Order order) {
     }
 
     public BasicResponse<String> Error(@RequestBody OrderTmp orderTmp) {

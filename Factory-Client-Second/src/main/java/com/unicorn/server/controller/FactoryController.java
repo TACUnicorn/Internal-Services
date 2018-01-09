@@ -8,6 +8,8 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 /**
  * @author Create by xuantang
  * @date on 12/13/17
@@ -20,7 +22,7 @@ public class FactoryController {
     @Autowired
     OrderMapper orderMapper;
 
-    @RequestMapping(value = "/place", method = RequestMethod.POST)
+    @RequestMapping(value = "/order", method = RequestMethod.POST)
     public BasicResponse<String> place(@RequestBody OrderTmp orderTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         if (orderTmp.getNum() < 0) {
@@ -62,6 +64,48 @@ public class FactoryController {
                 response.setContent(null);
                 return response;
             }
+        } catch (Exception e) {
+            logger.info(e.getMessage());
+            response.setCode(500);
+            response.setMessage("error");
+            return response;
+        }
+    }
+
+    @RequestMapping(value = "/orders", method = RequestMethod.GET)
+    public BasicResponse<List<Order>> view() {
+        BasicResponse<List<Order>> response = new BasicResponse<>();
+        try {
+            // Get product from database
+            List<Order> orders = orderMapper.getOrders();
+            if (orders != null) {
+                response.setCode(200);
+                response.setMessage("success");
+                response.setContent(orders);
+                return response;
+            } else {
+                response.setCode(300);
+                response.setMessage("not found the order");
+                response.setContent(null);
+                return response;
+            }
+        } catch (Exception e) {
+            logger.info(e.getMessage());
+            response.setCode(500);
+            response.setMessage("error");
+            return response;
+        }
+    }
+
+    @RequestMapping(value = "/order", method = RequestMethod.PUT)
+    public BasicResponse<String> update(@RequestBody Order order) {
+        BasicResponse<String> response = new BasicResponse<>();
+        try {
+            // Get product from database
+            orderMapper.updateOrder(order);
+            response.setCode(200);
+            response.setMessage("success");
+            return response;
         } catch (Exception e) {
             logger.info(e.getMessage());
             response.setCode(500);
