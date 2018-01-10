@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d32afa0b-d12d-4b96-9fc6-8ecc5a4299c0" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change beforePath="$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties" />
+      <change beforePath="$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java" afterPath="$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java" />
     </list>
     <ignored path="$PROJECT_DIR$/Warehouse-server/target/" />
     <ignored path="$PROJECT_DIR$/Warehouse-Ribbon/target/" />
@@ -64,8 +65,21 @@
       <file leaf-file-name="UnicornZuulApplication.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+            <state relative-caret-position="228">
+              <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+              <folding>
+                <element signature="e#1758#1759#0" expanded="true" />
+                <element signature="e#1822#1823#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="4" column="83" lean-forward="false" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
               <folding />
             </state>
           </provider>
@@ -81,7 +95,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BillController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BillController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Finance-Ribbon/src/main/java/com/unicorn/server/controller/BillController.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="174">
@@ -119,16 +133,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="276">
               <caret line="12" column="19" lean-forward="false" selection-start-line="12" selection-start-column="19" selection-end-line="12" selection-end-column="19" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="OrderMapper.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Factory-Client-Second/src/main/java/com/unicorn/server/mapper/OrderMapper.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -182,7 +186,6 @@
         <option value="$PROJECT_DIR$/Management-Client-First/pom.xml" />
         <option value="$PROJECT_DIR$/Management-Client-Second/pom.xml" />
         <option value="$PROJECT_DIR$/Management-Ribbon/pom.xml" />
-        <option value="$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java" />
         <option value="$PROJECT_DIR$/Unicorn-Zuul/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/Warehouse-Client-First/src/main/java/com/unicorn/server/model/Product.java" />
         <option value="$PROJECT_DIR$/Warehouse-Client-First/src/main/java/com/unicorn/server/mapper/WarehouseMapper.java" />
@@ -194,7 +197,6 @@
         <option value="$PROJECT_DIR$/Factory-Client-First/src/main/java/com/unicorn/server/controller/FactoryController.java" />
         <option value="$PROJECT_DIR$/Factory-Ribbon/src/main/java/com/unicorn/server/service/FactoryService.java" />
         <option value="$PROJECT_DIR$/Factory-Ribbon/src/main/java/com/unicorn/server/controller/FactoryController.java" />
-        <option value="$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/Warehouse-Client-First/src/main/java/com/unicorn/server/mapper/ProductMapper.java" />
         <option value="$PROJECT_DIR$/Warehouse-Ribbon/src/main/java/com/unicorn/server/controller/WarehouseController.java" />
         <option value="$PROJECT_DIR$/Warehouse-Client-First/src/main/java/com/unicorn/server/controller/WarehouseController.java" />
@@ -206,6 +208,8 @@
         <option value="$PROJECT_DIR$/Factory-Client-First/src/main/java/com/unicorn/server/mapper/OrderMapper.java" />
         <option value="$PROJECT_DIR$/Factory-Ribbon/src/main/java/com/unicorn/server/model/Order.java" />
         <option value="$PROJECT_DIR$/Warehouse-Client-First/src/test/java/com/unicorn/server/WarehouseClientApplicationTests.java" />
+        <option value="$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java" />
+        <option value="$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties" />
       </list>
     </option>
   </component>
@@ -416,42 +420,25 @@
           <expand>
             <path>
               <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
+              <item name="Unicorn-Config-Server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
+              <item name="Unicorn-Config-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
+              <item name="Unicorn-Config-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
+              <item name="Unicorn-Config-Server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Finance-Ribbon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Unicorn" type="b2602c69:ProjectViewProjectNode" />
@@ -548,7 +535,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.FinanceClient2Application">
+  <component name="RunManager" selected="Spring Boot.UnicornZuulApplication">
     <configuration default="true" type="Applet" factoryName="Applet">
       <option name="HTML_USED" value="false" />
       <option name="WIDTH" value="400" />
@@ -848,12 +835,12 @@
       <workItem from="1515521349913" duration="5733000" />
       <workItem from="1515565704186" duration="33000" />
       <workItem from="1515585646243" duration="3490000" />
-      <workItem from="1515597357114" duration="2654000" />
+      <workItem from="1515597357114" duration="3691000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="78873000" />
+    <option name="totallyTimeSpent" value="79910000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
@@ -876,10 +863,10 @@
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39628822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.39628822" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32969433" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21069519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21069519" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
       <window_info id="Theme Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1067,13 +1054,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="44" lean-forward="false" selection-start-line="5" selection-start-column="44" selection-end-line="5" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Warehouse-Ribbon/src/main/java/com/unicorn/server/model/ProductInfoTmp.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="13">
@@ -1248,10 +1228,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java">
+    <entry file="file://$PROJECT_DIR$/Finance-Ribbon/src/main/java/com/unicorn/server/controller/BillController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="11" column="3" lean-forward="false" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
+        <state relative-caret-position="174">
+          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1264,10 +1244,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Finance-Ribbon/src/main/java/com/unicorn/server/controller/BillController.java">
+    <entry file="file://$PROJECT_DIR$/Unicorn-Zuul/src/main/java/com/unicorn/zuul/UnicornZuulApplication.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="174">
-          <caret line="18" column="13" lean-forward="false" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        <state relative-caret-position="228">
+          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
+          <folding>
+            <element signature="e#1758#1759#0" expanded="true" />
+            <element signature="e#1822#1823#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Unicorn-Config-Server/src/main/resources/application.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="83" lean-forward="false" selection-start-line="4" selection-start-column="83" selection-end-line="4" selection-end-column="83" />
           <folding />
         </state>
       </provider>
