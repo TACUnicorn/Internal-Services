@@ -164,14 +164,17 @@ public class WarehouseController {
     @GetMapping(value = "/product/transfers")
     public BasicResponse<List<ProductTransfer>> getProductTransfers(@RequestParam(value = "start", required = false) Timestamp start,
                                                                     @RequestParam(value = "end", required = false) Timestamp end,
-                                                                    @RequestParam(value = "state") int state) {
+                                                                    @RequestParam(value = "state", required = false) String state) {
         BasicResponse<List<ProductTransfer>> response = new BasicResponse<>();
         try {
             List<ProductTransfer> productTransfers;
-            if (start == null) {
-                productTransfers = productTransferMapper.getProductTransfersNoDate(state);
+            if (state == null) {
+                productTransfers = productTransferMapper.getProductTransfersNoState();
+            }
+            else if (start == null) {
+                productTransfers = productTransferMapper.getProductTransfersNoDate(Integer.parseInt(state));
             } else {
-                productTransfers = productTransferMapper.getProductTransfers(start, end, state);
+                productTransfers = productTransferMapper.getProductTransfers(start, end, Integer.parseInt(state));
             }
             response.setCode(200);
             response.setMessage("success");

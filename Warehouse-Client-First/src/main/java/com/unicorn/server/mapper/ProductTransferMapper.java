@@ -25,6 +25,11 @@ public interface ProductTransferMapper {
             " WHERE p_id = product.id && state = #{state}")
     List<ProductTransfer> getProductTransfersNoDate(@Param("state") int state);
 
+
+    @Select("SELECT product_transfer.id, product.id AS p_id, num, name, time, type, state FROM product_transfer, product" +
+            " WHERE p_id = product.id")
+    List<ProductTransfer> getProductTransfersNoState();
+
     @Insert("INSERT INTO product_transfer(p_id, num, time, type, state) " +
             "VALUES(#{p_id}, #{num}, #{time}, #{type}, #{state})")
     int addProductTransfers(ProductTransfer productTransfer);

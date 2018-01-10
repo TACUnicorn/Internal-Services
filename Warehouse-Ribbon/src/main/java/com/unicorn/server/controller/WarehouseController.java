@@ -66,11 +66,14 @@ public class WarehouseController {
     @GetMapping(value = "/product/transfers")
     public BasicResponse getProductTransfers(@RequestParam(value = "start", required = false) Timestamp start,
                                              @RequestParam(value = "end", required = false) Timestamp end,
-                                             @RequestParam(value = "state") int state) {
-        if (start == null) {
-            return warehouseService.getProductTransfersNoDate(state);
+                                             @RequestParam(value = "state", required = false) String state) {
+        if (state == null) {
+            return warehouseService.getProductTransfersNoDate();
+        }
+        else if (start == null) {
+            return warehouseService.getProductTransfersNoDate(Integer.parseInt(state));
         } else {
-            return warehouseService.getProductTransfers(start, end, state);
+            return warehouseService.getProductTransfers(start, end, Integer.parseInt(state));
         }
     }
 
