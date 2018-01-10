@@ -64,10 +64,14 @@ public class WarehouseController {
     }
 
     @GetMapping(value = "/product/transfers")
-    public BasicResponse getProductTransfers(@RequestParam("start") Timestamp start,
-                                             @RequestParam("end") Timestamp end,
+    public BasicResponse getProductTransfers(@RequestParam(value = "start", required = false) Timestamp start,
+                                             @RequestParam(value = "end", required = false) Timestamp end,
                                              @RequestParam(value = "state") int state) {
-        return warehouseService.getProductTransfers(start, end, state);
+        if (start == null) {
+            return warehouseService.getProductTransfersNoDate(state);
+        } else {
+            return warehouseService.getProductTransfers(start, end, state);
+        }
     }
 
     @PostMapping(value = "/product")
