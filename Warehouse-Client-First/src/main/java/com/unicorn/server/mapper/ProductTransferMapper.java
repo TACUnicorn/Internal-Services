@@ -37,4 +37,7 @@ public interface ProductTransferMapper {
     @Update("UPDATE product_transfer SET state = #{state} WHERE id = #{id}")
     void updateProductTransfer(@Param("id") int id,
                                @Param("state") int state);
+
+    @Select("SELECT * FROM product_transfer WHERE id = #{id}")
+    ProductTransfer getProductTransferById(int id);
 }

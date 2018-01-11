@@ -151,6 +151,21 @@ public class WarehouseController {
         BasicResponse<String> response = new BasicResponse<>();
         try {
             productTransferMapper.updateProductTransfer(id, state);
+            if (state == 1) {
+                ProductTransfer productTransfer = productTransferMapper.getProductTransferById(id);
+                if (productTransfer != null) {
+                    if (warehouseMapper.checkProduct(productTransfer.getP_id()) > 0) {
+                        int count = warehouseMapper.getProductCountFromWarehouse(productTransfer.getP_id());
+                        if (count > 0) {
+                            warehouseMapper.updateWarehouse(productTransfer.getP_id(), productTransfer.getNum() + count);
+                        }
+                    } else {
+                        warehouseMapper.addWarehouse(productTransfer.getP_id(), productTransfer.getNum());
+                    }
+                } else {
+                    System.out.println("null");
+                }
+            }
             response.setCode(200);
             response.setMessage("success");
         } catch (Exception e) {
