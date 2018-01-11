@@ -4,9 +4,12 @@ import com.unicorn.server.mapper.OrderMapper;
 import com.unicorn.server.model.BasicResponse;
 import com.unicorn.server.model.Order;
 import com.unicorn.server.model.OrderTmp;
+import com.unicorn.server.service.FactoryService;
+import jdk.nashorn.internal.runtime.regexp.JoniRegExp;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
 
@@ -21,6 +24,9 @@ public class FactoryController {
 
     @Autowired
     OrderMapper orderMapper;
+
+    @Autowired
+    FactoryService factoryService;
 
     @RequestMapping(value = "/order", method = RequestMethod.POST)
     public BasicResponse<String> place(@RequestBody OrderTmp orderTmp) {
@@ -103,6 +109,9 @@ public class FactoryController {
         try {
             // Get product from database
             orderMapper.updateOrder(order);
+            if (order.getState() == 1) {
+                factoryService.putWarehouse(order.getP_id(), order.getNum());
+            }
             response.setCode(200);
             response.setMessage("success");
             return response;

@@ -49,6 +49,16 @@ public class WarehouseService {
                 + "&state=" + state, BasicResponse.class);
     }
 
+    @HystrixCommand(fallbackMethod = "getProductTransferNoStateError")
+    public BasicResponse getProductTransfersNoDate() {
+        return restTemplate.getForObject("http://WAREHOUSE-SERVICE-CLIENT/product/transfers", BasicResponse.class);
+    }
+
+    @HystrixCommand(fallbackMethod = "getProductTransferNoDateError")
+    public BasicResponse getProductTransfersNoDate(int state) {
+        return restTemplate.getForObject("http://WAREHOUSE-SERVICE-CLIENT/product/transfers?state=" + state, BasicResponse.class);
+    }
+
     @HystrixCommand(fallbackMethod = "viewError")
     public BasicResponse view(int id) {
         return restTemplate.getForObject("http://WAREHOUSE-SERVICE-CLIENT/view?id=" + id,
@@ -94,6 +104,19 @@ public class WarehouseService {
         return response;
     }
 
+    public BasicResponse getProductTransferNoDateError(int state) {
+        BasicResponse<List<ProductTransfer>> response = new BasicResponse<>();
+        response.setCode(400);
+        response.setMessage("error");
+        return response;
+    }
+
+    public BasicResponse getProductTransferNoStateError() {
+        BasicResponse<List<ProductTransfer>> response = new BasicResponse<>();
+        response.setCode(400);
+        response.setMessage("error");
+        return response;
+    }
     public BasicResponse postError(@RequestBody ProductTmp productTmp) {
         BasicResponse<String> response = new BasicResponse<>();
         response.setCode(400);

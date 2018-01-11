@@ -5,7 +5,6 @@ import com.unicorn.server.mapper.ProductTransferMapper;
 import com.unicorn.server.mapper.WarehouseMapper;
 import com.unicorn.server.model.*;
 import org.apache.log4j.Logger;
-import org.springframework.beans.factory.ListableBeanFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -139,6 +138,7 @@ public class WarehouseController {
             response.setCode(200);
             response.setMessage("success");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             response.setCode(400);
             response.setMessage("fail");
         }
@@ -154,6 +154,7 @@ public class WarehouseController {
             response.setCode(200);
             response.setMessage("success");
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             response.setCode(400);
             response.setMessage("fail");
         }
@@ -161,17 +162,24 @@ public class WarehouseController {
     }
 
     @GetMapping(value = "/product/transfers")
-    public BasicResponse<List<ProductTransfer>> getProductTransfers(@RequestParam("start") Timestamp start,
-                                                                    @RequestParam("end") Timestamp end,
-                                                                    @RequestParam(value = "state") int state) {
+    public BasicResponse<List<ProductTransfer>> getProductTransfers(@RequestParam(value = "start", required = false) Timestamp start,
+                                                                    @RequestParam(value = "end", required = false) Timestamp end,
+                                                                    @RequestParam(value = "state", required = false) String state) {
         BasicResponse<List<ProductTransfer>> response = new BasicResponse<>();
         try {
-            List<ProductTransfer> productTransfers = productTransferMapper.getProductTransfers(start, end, state);
+            List<ProductTransfer> productTransfers;
+            if (state == null) {
+                productTransfers = productTransferMapper.getProductTransfersNoState();
+            }
+            else if (start == null) {
+                productTransfers = productTransferMapper.getProductTransfersNoDate(Integer.parseInt(state));
+            } else {
+                productTransfers = productTransferMapper.getProductTransfers(start, end, Integer.parseInt(state));
+            }
             response.setCode(200);
             response.setMessage("success");
             response.setContent(productTransfers);
         } catch (Exception e) {
-            System.out.println(e.getMessage());
             response.setCode(400);
             response.setMessage("fail");
         }
