@@ -17,7 +17,7 @@ import org.springframework.web.filter.CorsFilter;
 @SpringBootApplication
 @EnableZuulProxy
 @EnableEurekaClient
-@EnableOAuth2Sso
+//@EnableOAuth2Sso
 public class UnicornZuulApplication {
 	@Bean
 	public CorsFilter corsFilter() {
